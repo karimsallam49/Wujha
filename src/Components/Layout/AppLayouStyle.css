@@ -1,0 +1,142 @@
+
+
+.MainPadding{
+    padding: 4rem !important;
+}
+.MainMarignTop{
+    margin-top: 15px !important;
+}
+
+@media screen and (max-width:900px) {
+    .LayoutSyle {
+        margin-top: 4rem;
+    }
+    .MainPadding {
+        padding: 1rem;
+    }
+    
+}
+@media screen and (max-width:1070px) {
+    .LayoutSyle {
+        margin-top: 0rem;
+    }
+    .MainPadding {
+        padding: 1rem !important;
+    }
+    
+}
+
+
+.contact-list {
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    display: flex;
+    border-radius: 15px 0 0 25px;
+    flex-direction: column;
+    z-index: 100;
+  
+}
+
+.contact-list a:hover {
+    transform: translate(-100px)
+}
+.conactdetail {
+    width: 100% !important;
+    color: var(--MainColor) !important;
+}
+.list-container {
+    width: 100%;
+    height: 100%;
+    position: relative
+}
+
+.contact-list a {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    margin-bottom: 10px;
+    border-radius: 25px 0 0 25px;
+    width: 155px;
+    height: 35px;
+    text-align: start;
+    line-height: 30;
+    margin-top: 0;
+    transition: transform .3s ease-in-out;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border: 1px solid var(--MainColor);
+    border-right: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 2rem;
+    position: fixed;
+    right: -88px;
+    bottom: 25px;
+    z-index: 10
+}
+
+.icon-contain-contact {
+    width: 60%
+}
+
+.conactdetail {
+    width: 100%;
+    color: var(--MainColor)
+}
+
+.desktop {
+    bottom: 115px!important
+}
+
+.icon-contact-list path {
+    fill: var(--MainColor)
+}
+
+.whatsapp {
+    bottom: 70px!important
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile-contact {
+        display:flex!important;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%);
+        position: fixed;
+        z-index: 100
+    }
+
+    .mobile-contact a {
+        width: 50px;
+        height: 50px;
+        margin: 0 5px;
+        border-radius: 8px;
+        background-color: #fff3;
+        border: 1px solid #ffffff99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: transform .3s ease-in-out
+    }
+
+    .mobile-contact a:hover {
+        transform: scale(1.2)
+    }
+
+    .mobile-contact i {
+        font-size: 1.5rem;
+        color: var(--MainColor)
+    }
+}
+
+.mobile-contact {
+    display: none
+}

@@ -1,0 +1,23 @@
+.landing-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible !important;
+  margin: 0;
+  padding: 0;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.wujha.com/wp-content/uploads/2024/10/thumb.webp");
+}
+
+.background-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* يخلي الفيديو يغطي الشاشة بدون تشويه */
+}

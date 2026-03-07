@@ -1,0 +1,39 @@
+.luxry-container{
+
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.luxry-contain{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+.underline{
+
+    text-decoration: underline;
+    color:  #80676D;
+    letter-spacing: 1px;
+    font-size: large;
+}
+.luxry-heading{
+
+    color: black;
+    font-family: var(--e-global-typography-text-font-family);
+    margin: 1px 0;
+    font-size: 4rem;
+}
+
+.luxry-p{
+        font-family: var(--e-global-typography-primary-font-family);
+    font-size: 22px;
+    color: #80676D;
+    text-align: center;
+}
+

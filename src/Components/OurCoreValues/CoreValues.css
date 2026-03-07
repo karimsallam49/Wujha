@@ -1,0 +1,349 @@
+
+.corevalues-section {
+    height: 60vh!important;
+    padding: 1rem
+}
+
+.award-heading {
+    opacity: 0;
+    transform: translateY(-200px);
+    transition: opacity 1.5s ease,transform 1.5s ease;
+    font-size: 48px;
+    color: #000;
+    font-weight: 200;
+    text-align: center;
+    text-transform: uppercase;
+    height: 80px
+}
+
+.award-heading-title {
+    opacity: 0;
+    transform: translateY(-200px);
+    transition: opacity 1.5s ease,transform 1.5s ease;
+    font-size: 28px;
+    color: #000;
+    font-weight: 200;
+    text-align: center;
+    text-transform: uppercase;
+    height: 40px
+}
+
+.custom-row {
+    display: flex;
+    height: 100%;
+    gap: 2px;
+    justify-content: space-around
+}
+
+.custom-col {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 3px;
+    flex-direction: column;
+    min-width: 200px
+}
+
+.award-image {
+    max-width: 100px;
+    object-fit: contain!important
+}
+
+.hover-text {
+    opacity: 1;
+    transition: all .4s ease;
+    color: #fff;
+    font-weight: 700;
+    display: none
+}
+
+.hover-header {
+    color: var(--MainColor)!important;
+    width: 60%
+}
+
+.core-heading {
+    font-size: 3rem
+}
+
+.hover-title {
+    font-weight: 400!important;
+    color: #fff;
+    font-size: xx-large;
+    line-height: 35px;
+    width: 80%;
+    padding: .5rem
+}
+
+.box-text-award {
+    width: 100%;
+    align-items: start;
+    justify-content: start;
+    padding: 10px;
+    opacity: 0;
+    transform: .5s;
+    transform: translateY(10px);
+    transition: opacity .5s ease,transform .5s ease;
+    transition-delay: .6s;
+    filter: blur(8px)
+}
+
+.image-gradient-overlay {
+    position: relative;
+    overflow: hidden
+}
+
+.image-gradient-overlay:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: inherit;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .4s ease;
+    -webkit-mask-image: linear-gradient(to top,rgba(0,0,0,1) 50%,rgba(0,0,0,0) 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: bottom;
+    -webkit-mask-size: 100% 100%;
+    mask-image: linear-gradient(to top,#000 50%,#0000);
+    mask-repeat: no-repeat;
+    mask-position: bottom;
+    mask-size: 100% 100%
+}
+
+.custom-col:hover .columnBody {
+    align-items: end!important
+}
+
+.glassy-card {
+    position: relative;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden
+}
+
+.glassy-card:before,.glassy-card:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #000;
+    filter: blur(120px);
+    z-index: -1
+}
+
+.value-title {
+    z-index: 100!important;
+    position: relative
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(6px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0)
+    }
+}
+
+.custom-col:hover:after {
+    opacity: 1
+}
+
+.award-image {
+    max-width: 100%;
+    transition: filter .4s ease;
+    object-fit: contain
+}
+
+.custom-col:hover .award-image {
+    max-width: 70%;
+    max-height: 70%
+}
+
+@media (max-width: 900px) {
+    .custom-row {
+        gap:16px 0
+    }
+
+    .core-heading {
+        font-size: 2rem
+    }
+
+    .custom-col {
+        flex: 0 0 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column
+    }
+
+    .award-image {
+        width: 70%;
+        max-height: 80px;
+        object-fit: contain!important
+    }
+
+    .awardsection {
+        height: auto!important
+    }
+
+    .custom-col {
+        height: 100%;
+        width: 100%!important
+    }
+}
+
+.ourcoreswiper>div {
+    height: 100%!important
+}
+
+.ourcoreswiper,.ourcoreswiper .slick-list,.ourcoreswiper .slick-track,.ourcoreswiper .slick-slide,.ourcoreswiper .slick-list .slick-slide div {
+    height: 100%!important
+}
+
+.ourcoreswiper {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px
+}
+
+.custom-col:hover .custom-hover {
+    position: absolute;
+    top: 53%;
+    opacity: 1;
+    height: 40%!important;
+    transform: translateY(0);
+    filter: blur(0px)
+}
+
+.custom-col:hover .custom-hover .hover-text {
+    display: block;
+    animation: fadeUp .7s ease forwards;
+    z-index: 1000
+}
+
+.ourcoreswiper .slick-slide:hover {
+    width: 800px!important;
+    transition: width .4s ease
+}
+
+@media screen and (max-width: 1200px) {
+    .ourcoreswiper .slick-slide:hover {
+        width:650px!important
+    }
+
+    .hover-title {
+        font-size: 1.4rem
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .ourcoreswiper .slick-slide:hover {
+        width:550px!important
+    }
+
+    .hover-title {
+        font-size: 1.2rem
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ourcoreswiper .slick-slide:hover {
+        width:400px!important
+    }
+
+    .hover-title {
+        font-size: 1rem
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .ourcoreswiper .slick-slide:hover {
+        width:320px!important
+    }
+
+    .hover-title {
+        font-size: .9rem
+    }
+}
+
+
+.ourcoreswiper .slick-dots {
+  bottom: -40px;
+}
+
+.ourcoreswiper .slick-dots li {
+  margin: 0 6px;
+}
+
+.ourcoreswiper .slick-dots li button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.ourcoreswiper .slick-dots li button:before {
+  display: none;
+}
+
+.ourcoreswiper .slick-dots li.slick-active button {
+  background: rgba(255, 255, 255, 0.9);
+}
+.glass-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  width: 20px;
+  height: 20px !important;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  font-size: 20px;
+}
+.slick-prev,
+.slick-next {
+  display: flex !important;
+}
+.ourcoreswiper .slick-dots {
+  bottom: -10px;
+}
+
+.ourcoreswiper .slick-next {
+    right: 5px;
+}
+
+.ourcoreswiper .slick-prev {
+    left: 5px;
+}
+
+@media (max-width: 900px) {
+    .wujhaowner {
+        flex-direction:column !important;
+        height: auto !important
+    }
+}

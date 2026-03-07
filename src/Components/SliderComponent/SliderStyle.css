@@ -1,0 +1,198 @@
+.slide-container-collection {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: visible !important;
+    cursor: pointer;
+    border-radius: var(--MainBorderRadius);
+}
+
+.slide-bg-collection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 1.8s ease;
+    z-index: 0;
+}
+
+.slide-overlay-collection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #07060699;
+    z-index: 1;
+}
+.slide-content-collection {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 2rem;
+    color: #fff;
+    width: 100%;
+}
+.left-content-collection {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    height: 100%;
+}
+
+.Collection-title-collection {
+    position: absolute;
+    top: 30%;
+}
+
+.uptown-link {
+    width: 100%;
+    height: 100%;
+}
+.collection-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    left: 50%;
+    filter: brightness(0) invert(1);
+}
+
+.discover-btn {
+    margin-top: 1rem;
+    padding: .8rem 2rem;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background .3s ease;
+    position: absolute;
+    bottom: 30%;
+}
+
+
+.thumbnail-slider-container {
+    width: 30%;
+    height: 400px;
+}
+
+.thumbnail-slider-container .swiper-slide {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thumbnail-card {
+  width: 100%;
+  height: 100%;
+}
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+.thumbnail-slider-container .swiper {
+  width: 100%;
+  height: 100%;
+  
+}
+.thumbnail-slider-container{
+    overflow: visible !important;
+}
+.thumbnail-slider-container .slick-slider {
+    overflow: visible !important;
+}
+.thumbnail-slider-container .slick-slider,
+.thumbnail-slider-container .slick-list,
+.thumbnail-slider-container .slick-track {
+  height: 100%;
+}
+
+.thumbnail-slider-container .slick-slide > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-arrow {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-80%);
+  z-index: 20000;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+
+.prev-arrow {
+  left: -60px;
+}
+
+.next-arrow {
+  right: -60px;
+}
+@media (max-width:900px) {
+  .slide-content-collection{
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .slide-container-collection{
+    height: 70vh;
+  }
+
+  .left-content-collection{
+    width: 100%;
+    height: 100%;
+  }
+  .thumbnail-slider-container{
+
+    width: 100%;
+    height: 200px;
+
+    
+  }
+  .Collection-title-collection {
+    position: absolute;
+    top: 20%;
+    font-size: x-large;
+}
+
+  .discover-btn{
+    position: absolute;
+    bottom: 10%;
+  }
+}
+@media (max-width: 768px) {
+  .prev-arrow {
+    left: 10px;
+  }
+
+  .next-arrow {
+    right: 10px;
+  }
+}

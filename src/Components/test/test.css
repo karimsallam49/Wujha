@@ -1,0 +1,27 @@
+.scroll-section {
+  height: 200vh;
+  position: relative;
+}
+
+.sticky-image {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.sticky-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scroll-content {
+  position: relative;
+  z-index: 1;
+  margin-top: 100vh; /* تخلي المحتوى يبدأ بعد الصورة */
+  padding: 2rem;
+  color: #000;
+}

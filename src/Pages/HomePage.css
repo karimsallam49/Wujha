@@ -1,0 +1,11 @@
+.homepage-container {
+  padding: 0 !important;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.homepage-header {
+  transition: top 0.3s;
+  position: sticky;
+  z-index: 1000;
+}

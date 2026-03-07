@@ -1,0 +1,166 @@
+
+
+.form-container {
+  margin: auto;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+ 
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  color: white;
+  padding: 2px 0;
+  font-size: 16px;
+  outline: none;
+  color: #000;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.row-mobile {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.country-code {
+  width: 90px;
+  padding: 8px 0;
+  border-bottom: 1px solid white;
+  font-weight: bold;
+}
+
+.mobile-input {
+  flex-grow: 1;
+}
+
+.checkbox-group {
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.checkbox-group input {
+  margin-right: 6px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #fff;
+  background: linear-gradient(to right, #333, #111);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #555, #222);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.footer-heading-mobile,.footer-social-media-mobile {
+  display: none;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.schdule-form{
+    padding: 2rem;
+}
+
+.footer-social-media-mobile a {
+      display: flex
+;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #000;
+    border: 2px solid #fff;
+    transition: border 0.3s ease;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.custom-textarea{
+    outline: none;
+}
+  .schdule-modal{
+    width: 600px !important;
+  }
+
+  .schdule-heading{
+
+    font-size: xx-large !important;
+  }
+
+  .schdule-radio{
+    width: 60% !important;
+    justify-content: space-between;
+    color: var(--text_light) !important;
+
+  }
+  .schdule-radio input[type="radio"] {
+   accent-color: var(--text_light);
+}
+.schdule-radio .form-check-input {
+  accent-color: var(--text_light);
+}
+
+/* لو عايز كمان لون النص */
+.schdule-radio .form-check-label {
+  color: var(--text_light);
+}
+@media screen and (max-width: 900px) {
+  .form-container{
+    width: 100%;
+    align-items: start !important;
+    justify-content: start !important;
+    padding: 20px;
+    background-color: rgba(36, 35, 35, 0.9);
+          padding: 1rem;
+
+  }
+
+  .footer-social-media-mobile{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+ 
+  .footer-heading-mobile{
+    display: block !important;
+    text-align: start;
+    margin-bottom: 20px;
+  font-size: larger !important;
+  }
+  .footer-heading h1 {
+    font-size: x-large !important;
+  }
+  }

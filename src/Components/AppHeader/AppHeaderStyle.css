@@ -1,0 +1,29 @@
+.appheader{
+    position: fixed;
+    z-index: 1000;
+    background-color: transparent;
+    padding: 20px 40px;
+    top: 5%;
+    right: 0;
+    
+}
+
+.logo{
+    width: 180px;
+    img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+   .logo{
+    width: 100px;
+    img{
+        width: 100%;
+    }
+
+    .logo-img {
+      display: none;
+    }
+}
+}

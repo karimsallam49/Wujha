@@ -1,0 +1,262 @@
+.timeline-container {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  transform: scale(1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider-contain {
+  position: relative !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.timeline-card {
+  display: flex !important;
+  align-items: center;
+  gap: 30px; 
+  transform: scale(0.5); 
+  width: 100% !important;
+  height: 320px; 
+  transition: all 0.4s ease;
+  justify-content: flex-start;
+  min-width: 900px; 
+  background-color: white;
+}
+
+.timeline-card.active p {
+  display: flex !important;
+}
+
+.timeline-card p {
+  display: none !important;
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+.timeline-card.active {
+  opacity: 1;
+  transform: scale(1);
+  padding-right: 1.5rem;
+  flex-direction: row !important;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 70% !important;
+}
+
+.timeline-image-wrapper {
+  position: relative;
+  width: 320px; 
+  height: 320px;
+  margin: auto;
+}
+
+.timeline-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px; 
+  height: 260px; 
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ff4d4d; 
+}
+
+.timeline-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 32px; 
+}
+
+.timer-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.ring {
+  fill: none;
+  stroke: red;
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.1s linear;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  width: 350px;  
+  height: 350px; 
+}
+
+.progress-ring__circle {
+  stroke-dasharray: 816; 
+  stroke-dashoffset: 816;
+  transition: stroke-dashoffset 3s linear;
+}
+
+.timeline-card.active .progress-ring__circle {
+  stroke-dashoffset: 0;
+}
+
+.timeline-card {
+  text-align: center;
+}
+
+.b-services-announcements--collection--circle {
+  height: 1000px; 
+  left: 65%;
+  overflow: visible;
+  position: absolute;
+  top: 50%;
+  transform: translate(-32%, -50%);
+  width: 100%;
+  min-width: 1200px;
+  z-index: -4;
+}
+.b-services-announcements--collection--circle--inside {
+  fill: none;
+  stroke: #302e2d;
+  stroke-width: 1.5; 
+  stroke-miterlimit: 1;
+}
+
+@media screen and (min-width: 2000px) {
+  .b-services-announcements--collection--circle {
+    transform: translate(-43%, -50%);
+    height: 2200px;
+    left: 90%;
+    overflow: visible;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    min-width: 1200px;
+    z-index: -4;
+  }
+}
+
+@media (min-width:1900px) and (max-width: 2500px) {
+  .b-services-announcements--collection--circle {
+    height: 2200px;
+    left: 85%;
+    overflow: visible;
+    position: absolute;
+    top: 50%;
+    transform: translate(-32%, -50%);
+    width: 100%;
+    min-width: 1200px;
+    z-index: -4;
+  }
+}
+
+@media (max-width:1900px) {
+   .b-services-announcements--collection--circle {
+    height: 2200px;
+    left: 85%;
+    overflow: visible;
+    position: absolute;
+    top: 50%;
+    transform: translate(-32%, -50%);
+    width: 100%;
+    min-width: 1200px;
+    z-index: -4;
+  }
+}
+@media (max-width: 1024px) {
+  .b-services-announcements--collection--circle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+    flex-direction: column;
+  }
+
+  .timeline-image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .timeline-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .progress-ring {
+    display: none;
+    width: 200px;
+    height: 200px;
+  }
+
+  .timeline-card.active {
+    flex-direction: column !important;
+    min-width: auto;
+    height: auto;
+    transform: scale(1);
+    padding: 1rem;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-card {
+    flex-direction: column;
+    min-width: auto;
+    height: auto;
+    transform: scale(1);
+    padding: 1rem;
+    gap: 15px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .timeline-card.active {
+    flex-direction: column;
+    min-width: auto;
+    height: auto;
+    transform: scale(1);
+    padding: 1rem;
+    gap: 15px;
+  }
+
+  .timeline-image-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+
+  .timeline-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .progress-ring {
+    width: 160px;
+    height: 160px;
+  }
+
+  .timeline-content {
+    width: 100% !important;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+  }
+}

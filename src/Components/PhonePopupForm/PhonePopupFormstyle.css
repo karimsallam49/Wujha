@@ -1,0 +1,20 @@
+.form-phonepopup{
+    width: 50%;
+    height: 100%;
+    color: white !important;
+    font-family: var(--e-global-typography-primary-font-family);
+    font-size: large;
+    max-width: 700px;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  padding: 8px 0;
+  font-size: 16px;
+  outline: none;
+}

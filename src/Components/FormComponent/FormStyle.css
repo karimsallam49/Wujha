@@ -1,0 +1,91 @@
+.country-dropdown {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 4px;
+  z-index: 10;
+  width: max-content;
+  min-width: 80px;
+  color: #000;
+}
+
+.country-item {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.country-item:hover {
+  background-color: #f0f0f0;
+}
+
+.country-dropdown {
+  position: absolute;
+  top: 80%;
+  left: 0%;
+  width: 360px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 9999;
+
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.country-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.country-item .flag {
+  font-size: 18px;
+}
+
+.country-item .name {
+  flex: 1;
+  font-size: 14px;
+}
+
+.country-item small {
+  opacity: 0.7;
+}
+.country-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.country-dropdown::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.country-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+}
+
+.country-dropdown::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.country-dropdown {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.08);
+}
+.FormInput{
+  color:white !important;
+}

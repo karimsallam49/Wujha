@@ -1,0 +1,24 @@
+
+
+.location-container {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10%;
+    width: 100%;
+    border-radius: var(--MainBorderRadius);
+}
+
+.time-number {
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+.places-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}

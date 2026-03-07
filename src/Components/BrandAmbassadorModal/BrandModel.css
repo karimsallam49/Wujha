@@ -1,0 +1,48 @@
+.custom-modal{
+
+    width: 80vw !important;
+}
+
+
+.calender ,.time-slots{
+
+    height: 90%;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.blur-dark {
+background-color: rgba(0, 0, 0, 0.4); 
+  backdrop-filter: blur(10px);       
+  -webkit-backdrop-filter: blur(10px);
+}
+.modal-content-custom{
+    background-color: transparent !important;
+}
+.time-border{
+    width: 100%;
+    border: 1px solid white;
+        padding: 10px;
+    border-radius: 5px;
+
+}
+
+.modal-content-custom{
+        width: 90% !important;
+}
+.modal-dialog-custom {
+        display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog-custom {
+         max-width: unset !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+   }

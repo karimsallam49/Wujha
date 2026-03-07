@@ -1,0 +1,44 @@
+.company-counts-box .x-devider {
+    margin-right: 40px;
+    margin-left: 35px;
+    height: 72px;
+}
+
+.x-devider {
+    height: 100%;
+    background: rgba(112, 112, 112, 0.44);
+    width: 1px;
+}
+.company-counts-box .company-count {
+    margin-bottom: 0px;
+}
+.company-counts-box .company-discribe {
+    font-size: 14px;
+    font-family: 'ringside_regularbook';
+    color: #000000;
+}
+
+[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+[data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] {
+    transition-timing-function: ease;
+}
+[data-aos][data-aos][data-aos-duration="1200"], body[data-aos-duration="1200"] [data-aos] {
+    transition-duration: 1.2s;
+}
+[data-aos^=fade][data-aos^=fade] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+[data-aos=fade-right] {
+    transform: translate3d(-100px, 0, 0);
+}
+
+.company-counts-box .company-count span {
+    font-size: 52px;
+    line-height: 62px;
+    color: #000000;
+}

@@ -1,0 +1,17 @@
+
+
+:root {
+    --e-global-typography-primary-font-family: "Avenir", sans-serif;
+    --e-global-typography-text-font-family: "Analogue", sans-serif;
+    --text_light:#ADA4A1;
+    --MainColor:#C84032;
+    --MainBorderRadius: 20px;
+}
+.app-layout {
+    width: 100%;
+    height: 100%;
+}
+
+.MainBorderRadius {
+    border-radius: var(--MainBorderRadius);
+}

@@ -1,0 +1,61 @@
+.landing-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 80vh !important;
+    overflow: hidden !important;
+    margin: 0;
+    padding: 0;
+}
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.wujha.com/wp-content/uploads/2024/10/thumb.webp);
+    border-radius: 20px !important;
+}
+
+.background-video video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upheader-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: -40%;
+    top: 35%;
+    object-fit: contain;
+    opacity: .8;
+    z-index: 1000;
+        filter: brightness(0) invert(1);
+
+}
+
+@media (max-width: 900px) {
+    .landing-wrapper{
+        max-height: 40vh !important;
+        margin-top: 4rem !important;
+    }
+    
+}
+@media (max-width: 575px) {
+    .landing-wrapper{
+        max-height: 26vh !important;
+        margin-top: 4rem !important;
+    }
+    
+}
+
+@media (max-height: 780px) {
+    .landing-wrapper{
+        height: 93vh !important;
+        margin-top: 1rem !important;
+    }               
+    
+}

@@ -1,0 +1,25 @@
+@media (max-width:900px) {
+    .imagehero{
+        height: 40vh !important;
+        margin-top: 4rem !important;
+
+    }
+    
+}
+@media (max-width:575px) {
+    .imagehero{
+        height: 26vh !important;
+        margin-top: 4rem !important;
+
+    }
+    
+}
+.bottom-right-text {
+  bottom: 20px;
+  right: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+}

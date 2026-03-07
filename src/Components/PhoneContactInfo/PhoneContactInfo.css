@@ -1,0 +1,38 @@
+.call-popup-1{
+    width: 50%;
+    height: 100%;
+    color: white !important;
+    font-family: var(--e-global-typography-primary-font-family);
+    font-size: large;
+        max-width: 700px;
+        text-align: right;
+        padding: 1rem;
+}
+.call-popup-1 h2 {
+    font-size: 25px;
+    font-weight: 100;
+}
+.call-popup-1 h2 b {
+    font-weight: 500;
+}
+.call-popup-1 p a {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: right;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.call-popup-1 .custom-btn {
+width: 100%;
+    padding: 1rem;
+    border: 1px solid #fff;
+    background: linear-gradient(to right, #333, #111);
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

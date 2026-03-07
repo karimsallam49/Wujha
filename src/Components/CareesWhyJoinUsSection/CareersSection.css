@@ -1,0 +1,20 @@
+ 
+.joblist-container a.formBtn {
+    color: var(--MainColor);;
+    text-decoration: none;
+    font-weight: 500
+}
+
+.joblist-container a.formBtn:hover {
+    text-decoration: underline;
+    color: var(--MainColor);
+}
+
+.joblist-container a {
+    color: var(--MainColor);;
+    text-decoration: none
+}
+
+.joblist-container a:hover {
+    color: var(--MainColor);
+}

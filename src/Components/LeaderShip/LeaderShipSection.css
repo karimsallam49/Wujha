@@ -1,0 +1,12 @@
+
+.wujhaowner-2{
+    flex-direction:row-reverse !important;
+
+}
+
+@media screen and (max-width: 768px) {
+    .wujhaowner, .wujhaowner-2 {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+}
