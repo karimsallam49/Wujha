@@ -18,7 +18,7 @@ interface HeroSectionProps {
 export default function ImageHeroSection({
   backgroundImage,
   height = "80vh",
-  overlayColor = "rgba(0,0,0,0.2)",
+  overlayColor = "rgba(0,0,0,0.02)",
   borderRadius = "var(--MainBorderRadius)",
   title,
   subtitle,

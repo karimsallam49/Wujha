@@ -19,7 +19,7 @@ interface LocationSectionProps {
 }
 
 const MapSection = ({
-  title = "RAFTS OF ARK",
+  title = "Wujha",
   subtitle = "Location",
   image,
   backgrounColor,
@@ -190,7 +190,7 @@ const MapSection = ({
                   width: "100%",
                   height: imgHeight,
                   borderRadius,
-                  objectFit: "cover",
+                  objectFit: "contain",
                   willChange: "transform, opacity, border-radius, height",
                 }}
               />

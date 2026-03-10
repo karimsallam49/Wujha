@@ -1,12 +1,16 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import VillaImage from "../../assets/Images/uptownside.jpg";
-import thubnail from "../../assets/Images/thumbnail-uptown.webp";
+// import VillaImage from "../../assets/Images/uptownside.jpg";
+// import thubnail from "../../assets/Images/thumbnail-uptown.webp";
 import "./PropertySelector.css";
 import Slider from "react-slick";
 import { DownloadBtns } from "../DownloadButton/DownloadBtns";
-
+import firstbedroomimg from "../../assets/Images/1bed.jpg"
+import secondbedroomimg from "../../assets/Images/2bed.jpg"
+import thirdbedroomimg from "../../assets/Images/3bed.jpg"
+import compactimg from "../../assets/Images/Compact 1 bed.jpg"
+import dubleximg from "../../assets/Images/Doublex.jpg"
 type Property = {
   id: string;
   title: string;
@@ -20,37 +24,37 @@ const properties: Property[] = [
     id: "villa-1",
     title: "Compact 1 Bedroom Apartment",
     description: "Compact 1 Bedroom Apartment",
-    thumb: thubnail,
-    background: VillaImage,
+    thumb: compactimg,
+    background: compactimg,
   },
   {
     id: "villa-a",
     title: "1 Bedroom Apartment",
     description: "1 Bedroom Apartment",
-    thumb: thubnail,
-    background: VillaImage,
+    thumb: firstbedroomimg,
+    background: firstbedroomimg,
   },
   {
     id: "villa-b",
     title: "2 bedrooms Apartment",
     description: "2 bedrooms Apartment",
-    thumb: thubnail,
-    background: VillaImage,
+    thumb: secondbedroomimg,
+    background: secondbedroomimg,
   },
   {
     id: "villa-d",
     title: "3 bedrooms Apartment",
     description: "3 bedrooms Apartment",
-    thumb: thubnail,
-    background: VillaImage,
+    thumb: thirdbedroomimg,
+    background: thirdbedroomimg,
   },
   {
     id: "vip",
     title: "3-4 Duplex Penthouse",
     description:
       "3-4 Duplex Penthouse",
-    thumb: thubnail,
-    background: VillaImage,
+    thumb: dubleximg,
+    background: dubleximg,
   },
   // {
   //   id: "apartments",

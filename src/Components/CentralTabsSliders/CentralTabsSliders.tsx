@@ -11,12 +11,22 @@ import "swiper/css/effect-fade";
 
 import "./CentralTabsSlider.css";
 import { tabsData } from "../../Data/TabsData";
+import CentralPDF from "../../assets/FctSht/Fctsht-C7.pdf"
 
 export default function CentralTabsSlider() {
   const [activeTab, setActiveTab] = useState(tabsData[0]);
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+ const downloadFactSheet = () => {
+    const file =CentralPDF;
 
+    const link = document.createElement("a");
+    link.href = file;
+    link.download = file.split("/").pop() || "factsheet.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -99,8 +109,8 @@ export default function CentralTabsSlider() {
                   ))}
                 </ul>
 
-                <div className="gap-3 buttons-central z-1 w-100 position-absolute d-flex justify-content-center">
-                  <button className="px-4 py-2 btn SheetBtn-central">
+                <div className="gap-3 buttons-central mb-3 z-1 w-100 position-absolute d-flex justify-content-center">
+                  <button onClick={downloadFactSheet} className="px-4 py-2 btn SheetBtn-central">
                     Download Fact Sheet
                   </button>
                   <button className="px-4 py-2 btn DownloadBTn-central text-light">
