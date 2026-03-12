@@ -602,8 +602,8 @@ input[type=text],input[type=email] {
     font-size: large
 }
 
-.sideBarContainer .accordion-button:after {
-    filter: invert(38%) sepia(59%) saturate(5441%) hue-rotate(353deg) brightness(90%) contrast(102%)
+.sideBarContainer .accordion-button::after {
+    filter: brightness(0) invert(1);
 }
 
 .typing-text {
@@ -990,7 +990,7 @@ input[type=text],input[type=email] {
     align-items: start;
     justify-content: space-between;
     padding: 1rem;
-    height: 70%;
+    height: 85%;
     width: 90%
 }
 
@@ -1160,7 +1160,7 @@ input[type=text],input[type=email] {
     }
 
     .form-component {
-        width: 80%
+        width: 90% !important;
     }
 
     .footer-social-media-mobile {

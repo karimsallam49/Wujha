@@ -25,7 +25,7 @@ export const DownloadBtns = ({
   };
   return (
    
-      <div className="gap-3 bottm-poistion btns z-1 w-100 position-absolute d-flex justify-content-center p-3">
+      <div className="gap-3 bottm-poistion btns  w-100 position-absolute d-flex justify-content-center p-3" style={{zIndex:"1000"}}>
         <button onClick={downloadFactSheet} className={`px-4 py-2 btn text-light SheetBtn ${className}`}>
           Download Fact Sheet
         </button>

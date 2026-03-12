@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./FormStyle.css";
+import { emailService } from "../../utils/emailService";
 
 type Country = {
   code: string;
@@ -38,7 +39,7 @@ export const FormComponent = () => {
     setErrors({ ...errors, [e.target.name]: false });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const newErrors = {
@@ -50,10 +51,25 @@ export const FormComponent = () => {
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some(Boolean)) {
-      console.log({
-        ...formData,
-        countryCode,
-      });
+      try {
+        const result = await emailService.sendFormData(
+          {
+            ...formData,
+            countryCode,
+          },
+          'Brand Ambassador Request'
+        );
+        
+        if (result.success) {
+          alert('Form submitted successfully! We will contact you soon.');
+          setFormData({ name: "", mobile: "", email: "" });
+        } else {
+          alert(result.message || 'Failed to submit form. Please try again.');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        alert('An error occurred. Please try again.');
+      }
     }
   };
 
@@ -65,7 +81,7 @@ export const FormComponent = () => {
           <input type="text" className="FormInput" name="name" value={formData.name} onChange={handleChange} />
           {errors.name && <p className="error-text">Name is required.</p>}
         </div>
-
+  <label>MOBILE</label>
         <div className="form-group row-mobile position-relative overflow-visible">
           <div
             className="country-code position-relative overflow-visible"
@@ -94,7 +110,7 @@ export const FormComponent = () => {
           </div>
 
           <div className="mobile-input">
-            <label>MOBILE</label>
+          
             <input
             className="FormInput"
               type="text"

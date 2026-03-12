@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./PhonePopupFormstyle.css"
+import { emailService } from "../../utils/emailService";
 export const PhonepopupForm = () => {
       const [formData, setFormData] = useState({ name: '', mobile: '', email: '' });
       const [errors, setErrors] = useState({ name: false, mobile: false, email: false });
@@ -9,7 +10,7 @@ export const PhonepopupForm = () => {
         setErrors({ ...errors, [e.target.name]: false });
       };
     
-      const handleSubmit = (e: React.FormEvent) => {
+      const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const newErrors = {
           name: formData.name.trim() === '',
@@ -19,8 +20,22 @@ export const PhonepopupForm = () => {
         setErrors(newErrors);
         const hasErrors = Object.values(newErrors).some(Boolean);
         if (!hasErrors) {
-          console.log('Form submitted:', formData);
-          setFormData({ name: '', mobile: '', email: '' });
+          try {
+            const result = await emailService.sendFormData(
+              formData,
+              'Phone Call Request'
+            );
+            
+            if (result.success) {
+              alert('Form submitted successfully! We will contact you soon.');
+              setFormData({ name: '', mobile: '', email: '' });
+            } else {
+              alert(result.message || 'Failed to submit form. Please try again.');
+            }
+          } catch (error) {
+            console.error('Form submission error:', error);
+            alert('An error occurred. Please try again.');
+          }
         }
       };
   return (

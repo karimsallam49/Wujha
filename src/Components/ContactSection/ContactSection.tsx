@@ -24,7 +24,7 @@ const ContactSection: React.FC = () => {
 
           <div className="col-md-6 mb-4">
             <h3 className="fw-bold mb-4">Let’s Talk</h3>
-            <form className="contact-form">
+            <form className="contact-form h-100">
               <input type="text" placeholder="Full Name *" className="form-control mb-3" />
               <input type="email" placeholder="Email Address *" className="form-control mb-3" />
               <input type="text" placeholder="Phone Number" className="form-control mb-3" />
@@ -58,6 +58,18 @@ const ContactSection: React.FC = () => {
                 (+968) 80033666
               </p>
             </div>
+            </div>
+            <div className="location-card ">
+              <h5 className="location-title">
+                <FaMapMarkerAlt className="me-2" />
+               Dubai branch 
+              </h5>
+              <p className="mb-3">
+                        Burj Al Salam Tower
+            Sheikh Zayed Road, Trade Centre 1,
+            Dubai, United Arab Emirates .
+              </p>
+              
             </div>
 
             <div className="location-card mb-2">

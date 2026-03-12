@@ -23,7 +23,7 @@ const stats = [
     label: "Projects",
     prefix: "+",
     suffix: "",
-    description: "successfully developed and delivered.",
+    description: "successfully launched ",
   },
   {
     icon: <FaHome className="stat-icon" />,

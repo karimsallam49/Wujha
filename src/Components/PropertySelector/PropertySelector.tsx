@@ -108,7 +108,7 @@ const PropertySelector = () => {
         <motion.div
           key={selected.id + "-overlay"}
           className="property-overlay"
-          animate={{ opacity: [1, 0, 1] }} 
+          animate={{ opacity: [.5, 0, .5] }} 
           transition={{ duration: 1 }}
         />
       </AnimatePresence>
