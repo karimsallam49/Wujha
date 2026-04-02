@@ -117,12 +117,9 @@ export default function LeadershipSection() {
 
           <h5 className="MainColor">Chief Executive Officer</h5>
 
-          <p style={{ fontSize: "1.2rem", lineHeight: 1.6, color: "black" }}>
-            A successful entrepreneur and competent leader with over 20 years of
-            professional experience in business development, strategic planning,
-            and international expansion. Through his vision, determination, and
-            strong leadership skills, Hazza has a proven track record in corporate
-            restructuring and business transformation.
+        <p style={{  lineHeight: 1.6, color: "black" }}>
+       Ali Al-Hashmi is the Co-Founder and Chief Executive Officer of Wujha Real Estate Development, bringing over two decades of leadership experience across real estate, infrastructure, and business development.
+Since founding Wujha in 2014, he has led the company’s operational growth and institutional development, establishing strong governance frameworks and strategic partnerships across Oman’s regulatory and development ecosystem. Through disciplined execution and close alignment with national planning priorities, Ali drives Wujha’s mission to deliver integrated, sustainable communities that support Oman’s urban transformation while creating long-term value for investors and residents.
           </p>
         </div>
       </motion.div>
@@ -163,11 +160,9 @@ export default function LeadershipSection() {
 
           <h5 className="MainColor">Chairman</h5>
 
-          <p style={{  lineHeight: 1.6, color: "black" }}>
-            A seasoned corporate executive and transformational leader with over
-            20 years of experience. As a Co-Founder of Wujha Development, Ali has
-            successfully turned the company’s vision into a reality, establishing
-            it as a leader in Oman's real estate development sector.
+         <p style={{ fontSize: "1.2rem", lineHeight: 1.6, color: "black" }}>
+        Hazza Al Saadi is the Co-Founder and Chairman of Wujha Real Estate Development and a prominent Omani business leader with over two decades of experience across real estate, industrial, and commercial sectors.
+Since co-founding Wujha in 2014, he has led the company’s long-term vision, positioning it as a forward-looking developer aligned with Oman’s Vision 2040. Through strategic leadership and strong connections within Oman’s industrial ecosystem, Hazza drives Wujha’s focus on sustainable urban development, smart living solutions, and integrated communities designed to create lasting value for investors and residents.
           </p>
         </div>
       </motion.div>

@@ -27,7 +27,7 @@ const JobListSection: React.FC = () => {
   Submit Your CV
 </a>{" "}
               and follow us on{" "}
-              <a target="_blank" href="#">
+              <a target="_blank" className="LinkedinBTN" href="https://www.linkedin.com/company/wujha/">
                 LinkedIn
               </a>{" "}
               to get notified

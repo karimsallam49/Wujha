@@ -4,51 +4,128 @@ interface FormData {
   email: string;
   countryCode?: string;
   formType?: string;
+  appointmentDate?: string;
+  appointmentTime?: string;
 }
 
-async function getConfig() {
-  const res = await fetch("/config/contact.json");
-  return res.json();
-}
-
-export const emailService = {
-  async sendFormData(formData: FormData, formType: string = "Contact Form") {
-    try {
-
-      const config = await getConfig();
-
-      const emailData = {
-        to: config.contactEmail,
-        from: formData.email,
-        subject: `New ${formType} Submission from ${formData.name}`,
-        body: `
-          <h2>New Form Submission</h2>
-          <p><strong>Form Type:</strong> ${formType}</p>
-          <p><strong>Name:</strong> ${formData.name}</p>
-          <p><strong>Email:</strong> ${formData.email}</p>
-          <p><strong>Mobile:</strong> ${formData.countryCode || "+971"} ${formData.mobile}</p>
-          <p><strong>Submitted at:</strong> ${new Date().toLocaleString()}</p>
-        `,
-        replyTo: formData.email,
-      };
-
-      console.log("Sending email:", emailData);
-
-      await simulateEmailSending(emailData);
-
-      return { success: true, message: "Form submitted successfully!" };
-    } catch (error) {
-      console.error("Error sending email:", error);
-      return { success: false, message: "Failed to submit form." };
-    }
-  },
+const loadConfig = async () => {
+  try {
+    const response = await fetch('/config/contact.json');
+    const config = await response.json();
+    return config;
+  } catch (error) {
+    console.error('Failed to load config:', error);
+    return { contactEmail: 'Karimsallam97@gmail.com' };
+  }
 };
 
-async function simulateEmailSending(emailData: any) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      console.log("Email sent successfully:", emailData);
-      resolve(true);
-    }, 1000);
-  });
-}
+export const emailService = {
+  async sendFormData(formData: FormData, formType: string = 'Contact Form') {
+    try {
+      const config = await loadConfig();
+      
+      // Primary method: Open user's email client (Outlook, etc.)
+      return this.sendEmailWithMailto(formData, formType, config.contactEmail);
+    } catch (error) {
+      console.error('Error preparing email:', error);
+      return { success: false, message: 'Failed to open email client.' };
+    }
+  },
+
+  async sendWithEmailJS(formData: FormData, formType: string, recipientEmail: string) {
+    try {
+      if (!(window as any).emailjs) {
+        await this.loadEmailJS();
+      }
+
+      const serviceID = 'service_your_service_id'; 
+      const templateID = 'template_your_template_id'; 
+      const publicKey = 'your_public_key'; 
+
+      const templateParams = {
+        to_email: recipientEmail,
+        from_name: formData.name,
+        from_email: formData.email,
+        mobile: `${formData.countryCode || '+971'} ${formData.mobile}`,
+        form_type: formType,
+        message: `
+          New form submission from ${formData.name}
+          
+          Form Type: ${formType}
+          Name: ${formData.name}
+          Email: ${formData.email}
+          Mobile: ${formData.countryCode || '+971'} ${formData.mobile}
+          Submitted at: ${new Date().toLocaleString()}
+        `,
+        reply_to: formData.email
+      };
+
+      // Send email using EmailJS
+      const response = await (window as any).emailjs.send(
+        serviceID,
+        templateID,
+        templateParams,
+        publicKey
+      );
+
+      console.log('Email sent successfully via EmailJS!', response);
+      return { success: true, message: 'Form submitted successfully!' };
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      throw error;
+    }
+  },
+
+  // Primary method: Open user's email client (Outlook, Gmail, etc.)
+  sendEmailWithMailto(formData: FormData, formType: string, recipientEmail: string = 'Karimsallam97@gmail.com') {
+    const subject = `New ${formType} from ${formData.name}`;
+    
+    // Build email body with appointment info if available
+    let appointmentInfo = '';
+    if (formData.appointmentDate || formData.appointmentTime) {
+      appointmentInfo = `
+
+📅 APPOINTMENT DETAILS:
+Requested Date: ${formData.appointmentDate || 'Not specified'}
+Requested Time: ${formData.appointmentTime || 'Not specified'}`;
+    }
+    
+    const body = `
+New Form Submission
+
+Form Type: ${formType}
+Name: ${formData.name}
+Email: ${formData.email}
+Mobile: ${formData.countryCode || '+971'} ${formData.mobile}
+Submitted at: ${new Date().toLocaleString()}${appointmentInfo}
+
+---
+This message was sent from the Wujha website contact form.
+    `.trim();
+
+    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.open(mailtoLink);
+    
+    return { success: true, message: 'Email client opened. Please send the email to complete submission.' };
+  },
+  loadEmailJS(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      if ((window as any).emailjs) {
+        resolve();
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+      script.async = true;
+      document.body.appendChild(script);
+      
+      script.onload = () => {
+        (window as any).emailjs.init('your_public_key'); 
+        resolve();
+      };
+      script.onerror = () => reject(new Error('Failed to load EmailJS'));
+    });
+  }
+};

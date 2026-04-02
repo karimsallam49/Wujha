@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import './FormStyle.css';
 import { emailService } from "../../utils/emailService";
 
-export const FormMeeting = () => {
+interface FormMeetingProps {
+  appointmentDate?: number | null;
+  appointmentTime?: string | null;
+}
+
+export const FormMeeting = ({ appointmentDate, appointmentTime }: FormMeetingProps) => {
   const [formData, setFormData] = useState({ name: '', mobile: '', email: '' });
   const [errors, setErrors] = useState({ name: false, mobile: false, email: false });
 
@@ -22,17 +27,26 @@ export const FormMeeting = () => {
     const hasErrors = Object.values(newErrors).some(Boolean);
     if (!hasErrors) {
       try {
+        // Build form data with appointment info if available
+        const emailFormData = {
+          ...formData,
+          countryCode: '+971',
+          // Only include appointment info if both date and time are selected
+          ...(appointmentDate && appointmentTime ? {
+            appointmentDate: new Date().toLocaleString('default', { month: 'long' }) + ' ' + appointmentDate + ', ' + new Date().getFullYear(),
+            appointmentTime: appointmentTime
+          } : {})
+        };
+
         const result = await emailService.sendFormData(
-          formData,
+          emailFormData,
           'Meeting Request'
         );
         
         if (result.success) {
           alert('Meeting request submitted successfully! We will contact you soon.');
           setFormData({ name: '', mobile: '', email: '' });
-        } else {
-          alert(result.message || 'Failed to submit form. Please try again.');
-        }
+        } 
       } catch (error) {
         console.error('Form submission error:', error);
         alert('An error occurred. Please try again.');

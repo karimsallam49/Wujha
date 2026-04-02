@@ -227,18 +227,35 @@ body {
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 2rem;
-    height: 95%;
+    padding: 1rem;
+    height: 100%;
     width: 100%;
-    padding-top: 5rem;
+    padding-top: 6rem;
+    font-size: large !important;
    
 }
+.modernlive{
+        margin-bottom: 5px;
 
+}
+.modernlive h3 {
+    font-size: medium !important;
+}
+.experssInterest-text{
+    height: 100% !important;
+            font-size: small;
+}
 .experssInterest-contain > h1,h2,h3,h4{
    font-size: larger !important;
 }
 .experssInterest-contain > h1,h2,h3,h4,h5,h6{
    font-size: larger !important;
+}
+.experssInterest-text .address-block .address-name {
+   font-size: larger !important;
+}
+.experssInterest-text .address-block .address-name p {
+   font-size: small !important;
 }
 
  h1{

@@ -7,7 +7,7 @@ const PhoneContactInfo = () => {
       <h3 className="fw-bold mb-4 fs-2">Reach us easily at</h3>
 
       <div className="location-card">
-        <h5 className="location-title">
+        <h5 className="location-title-phonepopup">
             <FaMapMarkerAlt className="me-2" />
           Muscat, Oman
         </h5>
@@ -57,7 +57,7 @@ const PhoneContactInfo = () => {
       </div>
 
       <div className="location-card">
-        <h5 className="location-title">
+        <h5 className="location-title-phonepopup">
            <FaMapMarkerAlt className="me-2" />
           Dubai branch
         </h5>
@@ -69,7 +69,7 @@ const PhoneContactInfo = () => {
       </div>
 
       <div className="location-card mb-2">
-        <h5 className="location-title">
+        <h5 className="location-title-phonepopup">
         <FaMapMarkerAlt className="me-2" />
           Cairo, Egypt
         </h5>
@@ -80,13 +80,13 @@ const PhoneContactInfo = () => {
         </p>
         <p className="mb-0">
           <span className="another-branch">
-            Another Branch :
+            Additional branch :
           </span>
           <br />
           3rd Floor, office 1309, Park St., Sheikh Zayed, Cairo, Egypt.
         </p>
         
-        <p className="phone-number mt-1">
+        <p className="phone-number-popup mt-1">
           <svg
             stroke="currentColor"
             fill="white"
@@ -104,7 +104,7 @@ const PhoneContactInfo = () => {
       </div>
 
       <h4 className="fw-bold mt-4 fs-3">Follow us</h4>
-      <div className="social-icons">
+      <div className="social-icons-popup">
         <a href="https://www.facebook.com/WUJHARealEstate" target="_blank" rel="noopener noreferrer">
           <svg
             xmlns="http://www.w3.org/2000/svg"

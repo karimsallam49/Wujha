@@ -103,7 +103,7 @@ export const servicesCards: CoreValue[] = [
   // },
   {
     id: 12,
-    title: "resale Services",
+    title: "Resale Services",
     desc:
       "Residential and commercial leasing. Tenant negotiations. Lease documentation. Renewal and retention strategies.",
     icon: FaHandshake,

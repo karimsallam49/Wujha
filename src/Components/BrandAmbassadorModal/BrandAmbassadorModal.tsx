@@ -152,7 +152,10 @@ const BrandAmbassadorModal = ({ show, handleClose }: any) => {
           {!isMobile && (
             <>
               <Col md={5}>
-                <FormMeeting />
+                <FormMeeting 
+                  appointmentDate={selectedDate}
+                  appointmentTime={selectedTime}
+                />
               </Col>
 
               <Col md={5}>
@@ -195,7 +198,10 @@ const BrandAmbassadorModal = ({ show, handleClose }: any) => {
 
               {step === 1 && (
                 <>
-                  <FormMeeting />
+                  <FormMeeting 
+                    appointmentDate={selectedDate}
+                    appointmentTime={selectedTime}
+                  />
                   <button
                     className="btn btn-light w-100 mt-3"
                     onClick={() => setStep(2)}

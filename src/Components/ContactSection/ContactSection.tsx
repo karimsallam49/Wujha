@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -12,8 +12,60 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import "./ContactSection.css";
+import { emailService } from "../../utils/emailService";
 
 const ContactSection: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    message: false
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: false });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const newErrors = {
+      name: formData.name.trim() === '',
+      email: formData.email.trim() === '',
+      message: formData.message.trim() === ''
+    };
+    setErrors(newErrors);
+
+    const hasErrors = Object.values(newErrors).some(Boolean);
+    if (!hasErrors) {
+      try {
+        const result = await emailService.sendFormData(
+          {
+            name: formData.name,
+            mobile: formData.phone,
+            email: formData.email,
+            countryCode: '+971'
+          },
+          'Contact Us Form'
+        );
+        
+        if (result.success) {
+          alert('Message sent successfully! We will contact you soon.');
+          setFormData({ name: '', email: '', phone: '', message: '' });
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        alert('An error occurred. Please try again.');
+      }
+    }
+  };
+
   return (
     <section
       className="py-5 contact-section"
@@ -24,11 +76,39 @@ const ContactSection: React.FC = () => {
 
           <div className="col-md-6 mb-4">
             <h3 className="fw-bold mb-4">Let’s Talk</h3>
-            <form className="contact-form h-100">
-              <input type="text" placeholder="Full Name *" className="form-control mb-3" />
-              <input type="email" placeholder="Email Address *" className="form-control mb-3" />
-              <input type="text" placeholder="Phone Number" className="form-control mb-3" />
-              <textarea rows={5} placeholder="Your Message *" className="form-control mb-3"></textarea>
+            <form className="contact-form h-100" onSubmit={handleSubmit}>
+              <input 
+                type="text" 
+                name="name"
+                placeholder="Full Name *" 
+                className="form-control mb-3"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Email Address *" 
+                className="form-control mb-3"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <input 
+                type="text" 
+                name="phone"
+                placeholder="Phone Number" 
+                className="form-control mb-3"
+                value={formData.phone}
+                onChange={handleChange}
+              />
+              <textarea 
+                name="message"
+                rows={5} 
+                placeholder="Your Message *" 
+                className="form-control mb-3"
+                value={formData.message}
+                onChange={handleChange}
+              ></textarea>
               <button type="submit" className="btn-submit w-100">
                 Send Message
               </button>
@@ -36,12 +116,12 @@ const ContactSection: React.FC = () => {
           </div>
 
           <div className="col-md-6 d-flex flex-column justify-content-center">
-            <h3 className="fw-bold mb-5 fs-2">Reach us easily at</h3>
+            <h3 className="fw-bold mb-5 fs-2">Reach us</h3>
 
             <div className="location-card ">
               <h5 className="location-title">
                 <FaMapMarkerAlt className="me-2" />
-                Muscat, Oman
+                Oman branch 
               </h5>
               <p className="mb-0">
                 Office no. 11, Building No. 2870, Way No. 2333,  
@@ -53,9 +133,13 @@ const ContactSection: React.FC = () => {
                 <FaEnvelope className="me-3" size={20} />
                 Inquiry@wujha.com
               </p>
-              <p className="d-flex align-items-center mb-3">
+              <p className="d-flex align-items-center mb-0">
                 <FaPhoneAlt className="me-3" size={20} />
                 (+968) 80033666
+              </p>
+              <p className="d-flex align-items-center mb-3">
+                <FaPhoneAlt className="me-3" size={20} />
+                (+968) 21081400 ( International Number)
               </p>
             </div>
             </div>
@@ -75,7 +159,7 @@ const ContactSection: React.FC = () => {
             <div className="location-card mb-2">
               <h5 className="location-title">
                 <FaMapMarkerAlt className="me-2" />
-                Cairo, Egypt
+                Egypt branch 
               </h5>
               <p className="mb-0">
                 Office B4-2-1.A, Building B4,  
@@ -83,7 +167,7 @@ const ContactSection: React.FC = () => {
                 5th Settlement, Cairo, Egypt.
                 <br />
                  <span className="MainColor">
-            Another Branch :
+            Additional branch:
             </span> 
                 <br />
              3rd Floor, office 1309, Park St., Sheikh Zayed, Cairo , Egypt.
@@ -107,9 +191,9 @@ const ContactSection: React.FC = () => {
              Hotline: 17667 (Egypt)
             </p>
 
+
             </div>
 
-           
 
             <h4 className="fw-bold mt-2  fs-3">Follow us</h4>
            <div className="d-flex gap-4 social-icons">

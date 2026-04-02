@@ -49,6 +49,15 @@ export const FooterSection = () => {
           >
             <b>Whether you are looking for your dream home, a strategic investment, or a new home for your business, our team is here to guide you.</b>
           </motion.p>
+
+          <motion.div
+            style={{ marginLeft:"4rem", marginTop:"1rem", display:"flex", alignItems:"center", gap:"10px", color:"#fff" }}
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+          >
+          
+          </motion.div>
         </motion.div>
       </div>
 

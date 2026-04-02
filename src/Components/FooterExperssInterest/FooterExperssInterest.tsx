@@ -1,4 +1,5 @@
 // import { motion } from "framer-motion";
+import { FaPhoneAlt } from "react-icons/fa";
 import "./FooterExepressStyle.css";
 
 export const FooterExperssInterest = () => {
@@ -35,9 +36,9 @@ export const FooterExperssInterest = () => {
             </h3>
           </div>
 
-          <div>
+          <div className="experssInterest-text">
             <h4>Contact</h4>
-
+           
             <div className="address-block">
               <h6 className="address-name">
                 <svg
@@ -138,7 +139,7 @@ export const FooterExperssInterest = () => {
            
                   <br />
            <span className="MainColor">
-            Another Branch :
+            Additional branch :
             </span> 
                 <br />
              3rd Floor, office 1309, Park St., Sheikh Zayed, Cairo , Egypt.
@@ -164,7 +165,11 @@ export const FooterExperssInterest = () => {
               </svg>
              Hotline: 17667 (Egypt)
             </p>
+ <div className="mb-2 d-flex align-items-center gap-2">
 
+  <FaPhoneAlt size={18} />
+            <span >+968 21081400 ( International Number)</span>
+            </div>
             <div className="footer-social-media">
               <a
                 href="https://www.instagram.com/wujha/"
